@@ -62,7 +62,7 @@ h1 {
   width: 90vw;
 }
 
-.fill {
+.text-fill {
   font-size: 20vw;
 }
 
@@ -84,6 +84,11 @@ h1 {
 
 #help li {
   list-style-type: none;
+}
+
+.fill {
+  height: 100vh;
+  width: 100vw;
 }
 
 .container-center {
