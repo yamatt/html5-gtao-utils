@@ -21,7 +21,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '16'
       - name: Install webpack
         run: npm install
         working-directory: ./main
