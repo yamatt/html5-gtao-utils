@@ -56,6 +56,7 @@ export default class InGameTime {
   }
 
   start() {
+    this.run();
     if (this.#updater === undefined) {
       this.#updater = setInterval(this.run, 1000);
     }
