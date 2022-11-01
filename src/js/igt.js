@@ -51,18 +51,17 @@ export default class InGameTime {
     return this.renderTime(inGameHours, inGameMinutes);
   }
 
-  runOn(inGameTimerEl) {
-    inGameTimeEl.value = this.inGameTime;
+  run() {
+    this.inGameTimeEl.value = this.inGameTime;
   }
 
   start() {
 
-    const inGameTimerEl = this.inGameTimeEl;
-    const runOn = this.runOn;
+    const that = this;
 
-    runOn(inGameTimerEl);
+    this.run();
     if (this.#updater === undefined) {
-      this.#updater = setInterval(() => {runOn(inGameTimerEl)}, 1000);
+      this.#updater = setInterval(() => {that.run.bind(that)}, 1000);
     }
   }
 
