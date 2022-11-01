@@ -86,11 +86,6 @@ h1 {
   list-style-type: none;
 }
 
-.fill {
-  height: 100vh;
-  width: 100vw;
-}
-
 .container-center {
   display: flex;
   align-items: center;
