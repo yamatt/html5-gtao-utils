@@ -56,12 +56,9 @@ export default class InGameTime {
   }
 
   start() {
-
-    const that = this;
-
     this.run();
     if (this.#updater === undefined) {
-      this.#updater = setInterval(() => {that.run.bind(that)}, 1000);
+      this.#updater = setInterval(this.run.bind(this), 1000);
     }
   }
 
