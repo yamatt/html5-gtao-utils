@@ -62,6 +62,10 @@ h1 {
   width: 90vw;
 }
 
+.fill {
+  font-size: 20vw;
+}
+
 .bottom {
   bottom: 0;
 }
