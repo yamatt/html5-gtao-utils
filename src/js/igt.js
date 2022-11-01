@@ -53,7 +53,6 @@ export default class InGameTime {
 
   run() {
     this.inGameTimeEl.value = this.inGameTime;
-    console.log(this.inGameTime)
   }
 
   start() {
