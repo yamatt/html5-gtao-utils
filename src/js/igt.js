@@ -10,7 +10,7 @@ export default class InGameTime {
   #updater;
 
   get inGameTimeEl() {
-    if (ingame_time_el==undefined) {
+    if (this.#ingame_time_el==undefined) {
       this.#ingame_time_el = document.getElementById(this.INGAME_TIME_EL_ID);
     }
     return this.#ingame_time_el;
