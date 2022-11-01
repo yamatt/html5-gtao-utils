@@ -34,8 +34,6 @@ jobs:
         run: |
           cp main/src/html/index.html public
           cp main/src/css/main.css public
-          cp main/src/data/backgrounds.json public
-          cp main/src/data/streams.json public
           cp main/dist/main.js main/dist/main.js.map public
           cp main/src/img/favicon.gif public
           echo $GITHUB_SHA > public/release
