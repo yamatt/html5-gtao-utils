@@ -1,17 +1,20 @@
 
 export default class InGameTime {
-  INGAME_TIME_EL_ID = "ingame-time";
-
   #ingame_time_el;
+  #ingame_time_el_id;
 
   GAME_CLOCK = 48 * 60; // 48 minutes in seconds
   GAME_OFFSET = -0.05; // in seconds
 
   #updater;
 
+  constructor (igt_el_id) {
+    this.#ingame_time_el_id = igt_el_id;
+  }
+
   get inGameTimeEl() {
     if (this.#ingame_time_el === undefined) {
-      this.#ingame_time_el = document.getElementById(this.INGAME_TIME_EL_ID);
+      this.#ingame_time_el = document.getElementById(this.#ingame_time_el_id);
     }
     return this.#ingame_time_el;
   }
