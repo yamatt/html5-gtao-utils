@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Grand Theft Auto V: Online: Mission Effort Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="favicon.gif">
+  </head>
+  <body>
+    <div class="pure-g">
+        <div class="pure-u-1-5"></div>
+        <div class="pure-u-3-5">
+            <h1>Calculate Rewards Per Hour</h1>
+            <h2>Work out how much you'll get per time invested in a mission</h2>
+            <form id="calc" class="pure-form pure-form-aligned">
+                <fieldset>
+                  <legend>Reward</legend>
+
+                  <label for="credit">Credit</label>
+                  <input type="number" id="credit" placeholder="1000000" />
+                  <label for="rp">RP</label>
+                  <input type="number" id="rp" placeholder="2000" />
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Time Taken</legend>
+                    <label for="time-taken">Time Taken (minutes)</label>
+                    <input type="number" id="time-taken" placeholder="180" />
+                    <span class="pure-form-message">How long in minutes should it take to complete the mission.</span>
+                    <label for="reset-time">Reset Time (minutes)</label>
+                    <input type="number" id="reset-time" placeholder="15" />
+                    <span class="pure-form-message">Once a mission is complete, how long in minutes to setup again. Ammo, body armour.</span>
+                    <label for="cool-down">Cool-down Time (minutes)</label>
+                    <input type="number" id="cool-down" placeholder="15" />
+                    <span class="pure-form-message">One a mission is complete, how long in minutes before you can run it again.</span>
+                    <label for="retry-rate">Retry rate</label>
+                    <input type="number" id="retry-rate" placeholder="1.5" />
+                    <span class="pure-form-message">How many times are you likely to fail the mission.</span>
+                </fieldset>
+
+                <h2>It is:</h2>
+                <output id="result" for="credit rp time-taken reset-time cool-down retry-rate" class="large" name="result"></output>
+                <p>Per hour</p>
+            </form>
+        </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
