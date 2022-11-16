@@ -1,45 +1,45 @@
 
 export default class MissionCalc {
-  #missionCalcFormElId;
-  #missionCalcFormEl;
+  #missionCalcFormElId
+  #missionCalcFormEl
 
-  #resultFieldId;
-  #resultFieldEl;
+  #resultFieldId
+  #resultFieldEl
 
   constructor (missionCalcFormElId, resultFieldId) {
-    this.#missionCalcFormElId = missionCalcFormElId;
-    this.#resultFieldId = resultFieldId;
+    this.#missionCalcFormElId = missionCalcFormElId
+    this.#resultFieldId = resultFieldId
   }
 
-  get missionCalcFormEl() {
+  get missionCalcFormEl () {
     if (this.#missionCalcFormEl === undefined) {
-      this.#missionCalcFormEl = document.getElementById(this.#missionCalcFormElId);
+      this.#missionCalcFormEl = document.getElementById(this.#missionCalcFormElId)
     }
-    return this.#missionCalcFormEl;
+    return this.#missionCalcFormEl
   }
 
-  get resultFieldEl() {
+  get resultFieldEl () {
     if (this.#resultFieldEl === undefined) {
-      this.#resultFieldEl = document.getElementById(this.#resultFieldId);
+      this.#resultFieldEl = document.getElementById(this.#resultFieldId)
     }
-    return this.#resultFieldEl;
+    return this.#resultFieldEl
   }
 
-  changeListener() {
-    this.missionCalcFormEl.querySelectorAll("input").forEach((input) => input.addEventListener('change', this.calc))
+  changeListener () {
+    this.missionCalcFormEl.querySelectorAll('input').forEach((input) => input.addEventListener('change', this.calc))
   }
 
-  submitListener() {
-    this.missionCalcFormEl.addEventListener('submit', (e) => e.preventDefault());
+  submitListener () {
+    this.missionCalcFormEl.addEventListener('submit', (e) => e.preventDefault())
   }
 
-  setup() {
-    this.changeListener();
-    this.submitListener();
-    this.calc();
+  setup () {
+    this.changeListener()
+    this.submitListener()
+    this.calc()
   }
 
-  calc() {
-    this.resultFieldEl.value = "Hello";
+  calc () {
+    this.resultFieldEl.value = 'Hello'
   }
 }
