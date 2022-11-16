@@ -1,4 +1,5 @@
 import InGameTime from "./igt.js";
+import MissionCalc from "./mission-calc.js";
 
 (function () {
   const ingame_time = new InGameTime('ingame-time');
