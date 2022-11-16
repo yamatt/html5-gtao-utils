@@ -18,7 +18,7 @@ export default class MissionCalc {
     return this.#missionCalcFormEl;
   }
 
-  get resultField() {
+  get resultFieldEl() {
     if (this.#resultFieldEl === undefined) {
       this.#resultFieldEl = document.getElementById(this.#resultFieldId);
     }
