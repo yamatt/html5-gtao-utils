@@ -96,3 +96,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+.right-align {
+  text-align: right;
+}
