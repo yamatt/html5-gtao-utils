@@ -13,5 +13,7 @@ jobs:
           node-version: '16'
       - name: Install npm dependencies
         run: npm install
+      - name: Lint code
+        run: npx eslint src/js
       - name: Package code
         run: npx webpack-cli
