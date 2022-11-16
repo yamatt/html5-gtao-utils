@@ -40,6 +40,22 @@ export default class MissionCalc {
   }
 
   calc () {
-    this.resultFieldEl.value = 'Hello'
+    const resetEstimatedTime = this.missionCalcFormEl.reset_time.value * this.missionCalcFormEl.retry_rate.value
+    if (resetEstimatedTime > this.missionCalcFormEl.cool_down.value) {
+      const resetTime = resetEstimatedTime;
+    }
+    else {
+      const resetTime = this.missionCalcFormEl.cool_down.value;
+    }
+
+    const inMissionTime = this.missionCalcFormEl.time_taken.value * this.missionCalcFormEl.retry_rate.value;
+    const totalTime = inMissionTime + resetTime;
+    console.log("Time taken:", totalTime)
+
+    const ratio = totalTime / 60;
+
+    const creditsPerHour = this.missionCalcFormEl.credit.value * ratio;
+
+    this.resultFieldEl.value = creditsPerHour;
   }
 }
