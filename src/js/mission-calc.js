@@ -30,7 +30,7 @@ export default class MissionCalc {
   }
 
   submitListener() {
-    this.missionCalcEl.addEventListener('submit', (e) => e.preventDefault());
+    this.missionCalcFormEl.addEventListener('submit', (e) => e.preventDefault());
   }
 
   setup() {
