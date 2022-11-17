@@ -58,6 +58,6 @@ export default class MissionCalc {
 
     const creditsPerHour = formEl.credit.value / ratio
 
-    this.resultFieldEl.value = parseInt( creditsPerHour ).toLocaleString();
+    this.resultFieldEl.value = parseInt(creditsPerHour).toLocaleString()
   }
 }
