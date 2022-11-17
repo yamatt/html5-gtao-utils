@@ -56,7 +56,7 @@ export default class MissionCalc {
 
     const ratio = totalTime / 60
 
-    const creditsPerHour = formEl.credit.value * ratio
+    const creditsPerHour = formEl.credit.value / ratio
 
     this.resultFieldEl.value = creditsPerHour
   }
