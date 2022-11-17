@@ -26,7 +26,7 @@ export default class MissionCalc {
   }
 
   changeListener () {
-    this.missionCalcFormEl.querySelectorAll('input').forEach((input) => input.addEventListener('change', this.calc))
+    this.missionCalcFormEl.querySelectorAll('input').forEach((input) => input.addEventListener('change', this.formChanged))
   }
 
   submitListener () {
@@ -36,23 +36,27 @@ export default class MissionCalc {
   setup () {
     this.changeListener()
     this.submitListener()
-    this.calc()
+    this.calc(this.missionCalcFormEl)
   }
 
-  calc () {
-    const resetEstimatedTime = this.missionCalcFormEl.reset_time.value * this.missionCalcFormEl.retry_rate.value
+  formChanged(e) {
+    console.log(e)
+  }
+
+  calc (formEl) {
+    const resetEstimatedTime = formEl.reset_time.value * formEl.retry_rate.value
     let resetTime = resetEstimatedTime
-    if (resetEstimatedTime < this.missionCalcFormEl.cool_down.value) {
-      resetTime = this.missionCalcFormEl.cool_down.value
+    if (resetEstimatedTime < formEl.cool_down.value) {
+      resetTime = formEl.cool_down.value
     }
 
-    const inMissionTime = this.missionCalcFormEl.time_taken.value * this.missionCalcFormEl.retry_rate.value
+    const inMissionTime = formEl.time_taken.value * formEl.retry_rate.value
     const totalTime = inMissionTime + resetTime
     console.log('Time taken:', totalTime)
 
     const ratio = totalTime / 60
 
-    const creditsPerHour = this.missionCalcFormEl.credit.value * ratio
+    const creditsPerHour = formEl.credit.value * ratio
 
     this.resultFieldEl.value = creditsPerHour
   }
