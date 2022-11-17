@@ -26,7 +26,7 @@ export default class MissionCalc {
   }
 
   changeListener () {
-    this.missionCalcFormEl.querySelectorAll('input').forEach((input) => input.addEventListener('change', this.formChanged))
+    this.missionCalcFormEl.querySelectorAll('input').forEach((input) => input.addEventListener('change', this.formChanged.bind(this)))
   }
 
   submitListener () {
@@ -39,8 +39,8 @@ export default class MissionCalc {
     this.calc(this.missionCalcFormEl)
   }
 
-  formChanged(e) {
-    console.log(e)
+  formChanged (e) {
+    this.calc(e.target.form)
   }
 
   calc (formEl) {
