@@ -9,7 +9,6 @@ body {
 }
 
 a, a:visited {
-  color: #fff;
   text-decoration: none;
 }
 
@@ -31,14 +30,8 @@ h1 {
   ;
 }
 
-#background-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+.height-10 {
+  height: 10em;
 }
 
 .info {
