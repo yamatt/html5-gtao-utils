@@ -3,12 +3,16 @@ export default class MissionCalc {
   #missionCalcFormElId
   #missionCalcFormEl
 
-  #resultFieldId
-  #resultFieldEl
+  #creditResultFieldId
+  #creditResultFieldEl
 
-  constructor (missionCalcFormElId, resultFieldId) {
+  #rpResultFieldId
+  #rpResultFieldEl
+
+  constructor (missionCalcFormElId, creditResultFieldId, rpResultFieldId) {
     this.#missionCalcFormElId = missionCalcFormElId
-    this.#resultFieldId = resultFieldId
+    this.#creditResultFieldId = creditResultFieldId
+    this.#rpResultFieldId = rpResultFieldId
   }
 
   get missionCalcFormEl () {
@@ -18,11 +22,18 @@ export default class MissionCalc {
     return this.#missionCalcFormEl
   }
 
-  get resultFieldEl () {
-    if (this.#resultFieldEl === undefined) {
-      this.#resultFieldEl = document.getElementById(this.#resultFieldId)
+  get creditResultFieldEl () {
+    if (this.#creditResultFieldEl === undefined) {
+      this.#creditResultFieldEl = document.getElementById(this.#creditResultFieldId)
     }
-    return this.#resultFieldEl
+    return this.#creditResultFieldEl
+  }
+
+  get rpResultFieldEl () {
+    if (this.#rpResultFieldEl === undefined) {
+      this.#rpResultFieldEl = document.getElementById(this.#rpResultFieldId)
+    }
+    return this.#rpResultFieldEl
   }
 
   changeListener () {
@@ -36,14 +47,14 @@ export default class MissionCalc {
   setup () {
     this.changeListener()
     this.submitListener()
-    this.calc(this.missionCalcFormEl)
+    this.calcCredit(this.missionCalcFormEl)
   }
 
   formChanged (e) {
-    this.calc(e.target.form)
+    this.calcCredit(e.target.form)
   }
 
-  calc (formEl) {
+  calcCredit (formEl) {
     const resetEstimatedTime = formEl.reset_time.value * formEl.retry_rate.value
     let resetTime = resetEstimatedTime
     if (resetEstimatedTime < formEl.cool_down.value) {
@@ -58,6 +69,24 @@ export default class MissionCalc {
 
     const creditsPerHour = formEl.credit.value / ratio
 
-    this.resultFieldEl.value = parseInt(creditsPerHour).toLocaleString()
+    this.creditResultFieldEl.value = parseInt(creditsPerHour).toLocaleString()
+  }
+
+  calcRP (formEl) {
+    const resetEstimatedTime = formEl.reset_time.value * formEl.retry_rate.value
+    let resetTime = resetEstimatedTime
+    if (resetEstimatedTime < formEl.cool_down.value) {
+      resetTime = formEl.cool_down.value
+    }
+
+    const inMissionTime = formEl.time_taken.value * formEl.retry_rate.value
+    const totalTime = inMissionTime + resetTime
+    console.log('Time taken:', totalTime)
+
+    const ratio = totalTime / 60
+
+    const rpPerHour = formEl.rp.value / ratio
+
+    this.rpResultFieldEl.value = parseInt(rpPerHour).toLocaleString()
   }
 }

@@ -5,6 +5,6 @@ import MissionCalc from './mission-calc.js';
   const ingameTime = new InGameTime('ingame-time')
   ingameTime.start()
 
-  const missionCalc = new MissionCalc('calc', 'credit_result')
+  const missionCalc = new MissionCalc('calc', 'credit_result', 'rp_result')
   missionCalc.setup()
 })()
