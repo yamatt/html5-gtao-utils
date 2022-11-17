@@ -59,7 +59,15 @@ h1 {
 }
 
 .full-width {
-  width: 90vw;
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.no-border {
+  border: 0px;
 }
 
 .text-fill {
