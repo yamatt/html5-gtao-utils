@@ -45,10 +45,12 @@ export default class MissionCalc {
   }
 
   setup () {
-    this.changeListener()
-    this.submitListener()
-    this.calcCredit(this.missionCalcFormEl)
-    this.calcRP(this.missionCalcFormEl)
+    if (this.missionCalcFormEl) {
+      this.changeListener()
+      this.submitListener()
+      this.calcCredit(this.missionCalcFormEl)
+      this.calcRP(this.missionCalcFormEl)
+    }
   }
 
   formChanged (e) {
