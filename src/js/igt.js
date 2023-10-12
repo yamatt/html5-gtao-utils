@@ -4,7 +4,7 @@ export default class InGameTime {
   #ingameTimeElId
 
   GAME_CLOCK = 48 * 60 // 48 minutes in seconds
-  GAME_OFFSET = -0.05 // in seconds
+  GAME_OFFSET = -6.15 // in seconds
 
   #updater
 
